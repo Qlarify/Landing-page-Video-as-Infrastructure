@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Free Video Audit for Hospitals — Qlarify Health</title>
+<meta name="description" content="Free 7-day video audit for hospital marketing teams. We map your entire video library against the patient journey and rank the top 10 gaps costing you OPD walk-ins." />
+<link rel="canonical" href="https://videoaudit.qlarify.health/" />
+<link rel="icon" href="/favicon.ico" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://videoaudit.qlarify.health/" />
+<meta property="og:title" content="Free Video Audit for Hospitals — Qlarify Health" />
+<meta property="og:description" content="7-day video audit. Library inventory, specialty × stage gap matrix, top 10 missing videos ranked by patient volume + revenue. Free." />
+<meta property="og:image" content="https://videoaudit.qlarify.health/og-image.jpg" />
+<meta property="og:site_name" content="Qlarify Health" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Video Audit for Hospitals — Qlarify Health" />
+<meta name="twitter:description" content="7-day audit. Library mapped. Top 10 gaps ranked. Free." />
+<meta name="twitter:image" content="https://videoaudit.qlarify.health/og-image.jpg" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#163460" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dist/styles.css">
+</head>
+<body class="bg-cream">
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-colors duration-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="https://qlarify.health" class="brand" aria-label="Qlarify Health">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="#163460" fill-rule="evenodd" d="M7,4 H45 A3,3 0 0 1 48,7 V45 A3,3 0 0 1 45,48 H7 A3,3 0 0 1 4,45 V7 A3,3 0 0 1 7,4 Z M16,12 H36 A3,3 0 0 1 39,15 V36 A3,3 0 0 1 36,39 H16 A3,3 0 0 1 13,36 V15 A3,3 0 0 1 16,12 Z"/>
+        <line x1="44" y1="46" x2="57" y2="61" stroke="#163460" stroke-width="7" stroke-linecap="round"/>
+        <text x="62" y="38" font-family="'DM Sans', Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="1" fill="#163460">LARIFY</text>
+        <text x="66" y="62" font-family="'DM Sans', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="6" fill="#E8835F">HEALTH</text>
+      </svg>
+    </a>
+    <div class="flex items-center gap-2">
+      <a href="tel:+918147410751" aria-label="Call +91 81474 10751" class="inline-flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-full border border-rust/40 bg-rust-pale text-rust-dk hover:bg-white hover:border-rust transition-colors text-[13.5px] sm:text-[14px] font-semibold shadow-sm">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <span class="hidden sm:inline">+91 81474 10751</span>
+      </a>
+      <a href="https://wa.me/918147410751?text=Hi%2C%20I%27d%20like%20a%20free%20video%20audit%20for%20our%20hospital."
+         target="_blank" rel="noopener"
+         aria-label="Chat with us on WhatsApp"
+         class="inline-flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-full bg-[#25D366] text-white hover:bg-[#1da851] transition-colors text-[13.5px] sm:text-[14px] font-semibold shadow-sm">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+          <path d="M17.6 6.32A8.78 8.78 0 0 0 11.42 4 8.86 8.86 0 0 0 2.6 12.85a8.7 8.7 0 0 0 1.18 4.39L2.5 22l4.86-1.27a8.83 8.83 0 0 0 4.06.97h.01A8.86 8.86 0 0 0 20.25 12a8.74 8.74 0 0 0-2.65-5.68zm-6.18 13.5h-.01a7.36 7.36 0 0 1-3.74-1.02l-.27-.16-2.78.73.74-2.7-.17-.28A7.31 7.31 0 0 1 4 12.85 7.39 7.39 0 0 1 11.42 5.5a7.34 7.34 0 0 1 5.21 2.16 7.32 7.32 0 0 1 2.15 5.21 7.4 7.4 0 0 1-7.36 7.42zm4.05-5.55c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.14.22-.57.72-.7.86-.13.15-.26.17-.48.06-.22-.11-.94-.34-1.78-1.1-.66-.59-1.1-1.31-1.23-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.64-.18-.43-.36-.37-.5-.38l-.43-.01a.83.83 0 0 0-.6.28c-.21.22-.79.77-.79 1.88s.81 2.18.92 2.32c.11.15 1.6 2.43 3.86 3.41.54.23.96.37 1.29.48.54.17 1.04.15 1.43.09.44-.07 1.31-.54 1.5-1.06.18-.52.18-.96.13-1.06-.06-.1-.2-.16-.42-.27z"/>
+        </svg>
+        <span class="hidden sm:inline">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO — outcome-driven, with inline lead form -->
+<section class="hero">
+  <div class="max-w-7xl mx-auto px-6 pt-28 pb-20 md:pt-36 md:pb-24 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-7">
+      <span class="chip"><span class="dot"></span> Free Video Audit · Based on Patient Journey</span>
+      <h1 class="h-serif mt-6 text-[40px] md:text-[60px] font-bold">
+        Feeling Frustrated with Multiple Video Production,<br/>
+        But Getting No <em>Tangible Results?</em>
+      </h1>
+      <p class="mt-6 text-[17px] text-ink/75 max-w-xl leading-relaxed">
+        Take the <strong class="text-ink">Free Video Audit</strong> to Know Where Your Funnel Leaks — based on Patient Journey: Symptom Awareness → Trust Building → Decision → Post-Op Care. Guided video for each stage.
+      </p>
+      <ul class="mt-6 grid sm:grid-cols-2 gap-x-5 gap-y-2 text-[14.5px] text-ink/85 max-w-xl">
+        <li class="flex gap-2"><span class="text-rust font-bold">✓</span> 10K+ Videos Produced</li>
+        <li class="flex gap-2"><span class="text-rust font-bold">✓</span> 17+ Hospital Units</li>
+        <li class="flex gap-2"><span class="text-rust font-bold">✓</span> 10+ Years of Experience</li>
+        <li class="flex gap-2"><span class="text-rust font-bold">✓</span> Reports within 48 hours</li>
+      </ul>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="#lead-form-hero" id="cta-primary" class="btn-primary">Claim the Free Audit of Your YouTube Channel →</a>
+      </div>
+    </div>
+
+    <div class="md:col-span-5">
+      <div class="card p-6 md:p-7" id="lead-form-hero">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="chip"><span class="dot"></span> Only 5 Slots · Reports within 48 hours · Completely Free</span>
+        </div>
+        <h3 class="h-serif text-ink text-[26px] font-bold leading-tight">Claim the <em>Free Audit</em> of Your YouTube Channel.</h3>
+        <form class="mt-5 grid grid-cols-1 gap-3" name="lead-hero" data-form="hero" onsubmit="return submitLead(event)">
+          <div class="hp-field" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label></div>
+          <input required name="name" type="text" placeholder="Your name" class="lead-input" />
+          <input required name="hospital" type="text" placeholder="Hospital name" class="lead-input" />
+          <div class="grid grid-cols-2 gap-3">
+            <input required name="phone" type="tel" placeholder="WhatsApp number" class="lead-input" />
+            <select required name="role" class="lead-input">
+              <option value="">Your role</option>
+              <option>Marketing Head</option>
+              <option>CMO / VP Marketing</option>
+              <option>CEO / COO / CXO</option>
+              <option>Brand / Digital Lead</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <input required name="email" type="email" placeholder="Work email" class="lead-input" />
+          <button type="submit" class="btn-primary justify-center !py-3.5 !text-[15px] mt-1">Claim the Free Audit of Your YouTube Channel →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP — quantified results + hospital logos -->
+<section class="trust-strip">
+  <div class="max-w-7xl mx-auto px-6 py-10 md:py-12">
+    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 mb-8">
+      <div class="text-center">
+        <div class="font-serif text-ink text-[28px] font-bold leading-none">10,000<span class="text-rust">+</span></div>
+        <div class="text-[11.5px] uppercase tracking-[.18em] text-ink/60 mt-1">Patient-facing videos shipped</div>
+      </div>
+      <div class="text-center">
+        <div class="font-serif text-ink text-[28px] font-bold leading-none">17<span class="text-rust">+</span></div>
+        <div class="text-[11.5px] uppercase tracking-[.18em] text-ink/60 mt-1">Hospitals served</div>
+      </div>
+      <div class="text-center">
+        <div class="font-serif text-ink text-[28px] font-bold leading-none">10<span class="text-rust">+</span></div>
+        <div class="text-[11.5px] uppercase tracking-[.18em] text-ink/60 mt-1">Years inside Indian healthcare</div>
+      </div>
+      <div class="text-center">
+        <div class="font-serif text-ink text-[28px] font-bold leading-none">7</div>
+        <div class="text-[11.5px] uppercase tracking-[.18em] text-ink/60 mt-1">Days to deliver an audit</div>
+      </div>
+    </div>
+    <div class="trust-eyebrow">Worked with Manipal Hospitals, Narayana Hospital, Sparsh Hospital, Sakra World, Gleneagles, Rainbow Hospital</div>
+    <div class="trust-grid">
+      <div class="tl"><img src="https://qlarify.health/logos/manipal.svg" alt="Manipal Hospitals" loading="lazy" /></div>
+      <div class="tl"><img src="https://qlarify.health/logos/narayana.png" alt="Narayana Health" loading="lazy" /></div>
+      <div class="tl"><img src="https://qlarify.health/logos/sparsh.svg" alt="Sparsh Hospital" loading="lazy" /></div>
+      <div class="tl"><img src="https://qlarify.health/logos/sakra.svg" alt="Sakra World Hospital" loading="lazy" /></div>
+      <div class="tl"><img src="https://qlarify.health/logos/kims.png" alt="KIMS Hospitals" loading="lazy" /></div>
+      <div class="tl"><img src="https://qlarify.health/logos/rainbow.png" alt="Rainbow Children's Hospitals" loading="lazy" /></div>
+      <div class="tl"><img src="https://qlarify.health/logos/gleneagles.png" alt="Gleneagles Hospitals" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT REALITY -->
+<section id="reality" class="sec-white border-y border-border">
+  <div class="max-w-7xl mx-auto px-6 py-14 md:py-16 relative z-10">
+    <div class="max-w-3xl">
+      <div class="eyebrow mb-3">The Gap Nobody Maps</div>
+      <h2 class="h-serif text-ink text-[30px] md:text-[44px] font-bold">More videos have never meant more <em>patients</em>.</h2>
+      <p class="mt-4 text-[16px] text-ink/80 leading-relaxed">Hospitals don't have a shooting problem. They have a <em class="font-serif text-ink">structure</em> problem. Here's what's quietly broken inside the folder marked "marketing videos".</p>
+    </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="card p-6">
+        <div class="num">01</div>
+        <h3 class="font-serif text-[20px] text-ink font-semibold mt-1">A Library Nobody Indexed</h3>
+        <p class="mt-2 text-[14.5px] text-ink/75 leading-relaxed">Videos are scattered across YouTube. No inventory. No taxonomy. The next shoot is briefed without knowing what already exists.</p>
+      </div>
+      <div class="card p-6">
+        <div class="num">02</div>
+        <h3 class="font-serif text-[20px] text-ink font-semibold mt-1">No Journey, No Sequence</h3>
+        <p class="mt-2 text-[14.5px] text-ink/75 leading-relaxed">A patient researching knee replacement lands on a YouTube Short, then a 2019 doctor interview — and drops off due to missing stages.</p>
+      </div>
+      <div class="card p-6">
+        <div class="num">03</div>
+        <h3 class="font-serif text-[20px] text-ink font-semibold mt-1">Invisible Gaps, Repeated Spending</h3>
+        <p class="mt-2 text-[14.5px] text-ink/75 leading-relaxed">Oncology has 40 videos. Nephrology has 2. Pre-op is over-covered. Recovery is silent. Without a map, the same stage is repeated while others remain blank.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD + DELIVERABLE (merged) -->
+<section id="moves" class="sec-cream">
+  <div class="max-w-7xl mx-auto px-6 py-14 md:py-16 relative z-10">
+    <div class="max-w-3xl">
+      <div class="eyebrow mb-3">What You Will Get in 48 Hours</div>
+      <h2 class="h-serif text-ink text-[30px] md:text-[44px] font-bold">Not a deck.<br/>A working <em>map</em> in 48 hours.</h2>
+    </div>
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card p-5"><div class="num">01</div><h3 class="font-serif text-[18px] text-ink font-semibold mt-1">Library Inventory</h3><p class="mt-2 text-[13.5px] text-ink/75 leading-relaxed">Every video across YouTube, web, Instagram, WhatsApp — tagged by specialty, stage, format, and performance.</p></div>
+        <div class="card p-5"><div class="num">02</div><h3 class="font-serif text-[18px] text-ink font-semibold mt-1">Gap Matrix</h3><p class="mt-2 text-[13.5px] text-ink/75 leading-relaxed">Specialty × journey-stage grid. Over-served, under-served, and silent areas visible in one frame.</p></div>
+        <div class="card p-5"><div class="num">03</div><h3 class="font-serif text-[18px] text-ink font-semibold mt-1">Top 10 Missing</h3><p class="mt-2 text-[13.5px] text-ink/75 leading-relaxed">The next 10 topics for video production in priority order.</p></div>
+        <div class="card card-accent p-5"><div class="num">04</div><h3 class="font-serif text-[18px] text-ink font-semibold mt-1">30-min walkthrough</h3><p class="mt-2 text-[13.5px] text-ink/75 leading-relaxed">A working session with your marketing lead. We walk the map, you walk away with a 12-month plan.</p></div>
+      </div>
+    <div class="mt-10 text-center">
+      <a href="#lead-form-mid" class="btn-primary">Claim the Free Audit of Your YouTube Channel →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="sec-alt">
+  <div class="max-w-7xl mx-auto px-6 py-14 md:py-16 relative z-10">
+    <div class="max-w-3xl">
+      <div class="eyebrow mb-3">What hospitals say about our videos</div>
+      <h2 class="h-serif text-ink text-[30px] md:text-[44px] font-bold">Production quality that makes<br/><em>patients trust before they call</em>.</h2>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card p-6">
+        <div class="font-serif italic text-rust text-[40px] leading-none">"</div>
+        <p class="text-[14.5px] text-ink/85 leading-relaxed mt-1">The production quality was unlike anything we had seen in healthcare video. Lighting, pacing, the way the doctor was framed — it felt like content a patient would actually want to watch, not a corporate bulletin.</p>
+        <div class="h-px bg-border my-4"></div>
+        <div class="text-[13px] font-semibold text-ink">VP Marketing</div>
+        <div class="text-[12px] text-ink/60">Multi-speciality hospital group · Mumbai</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-serif italic text-rust text-[40px] leading-none">"</div>
+        <p class="text-[14.5px] text-ink/85 leading-relaxed mt-1">Our doctors had been filmed before, but never like this. The scripting made each doctor sound genuinely reassuring, not scripted. Patients started quoting specific lines from the videos during consultations.</p>
+        <div class="h-px bg-border my-4"></div>
+        <div class="text-[13px] font-semibold text-ink">Marketing Head</div>
+        <div class="text-[12px] text-ink/60">Tertiary care hospital · Bengaluru</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-serif italic text-rust text-[40px] leading-none">"</div>
+        <p class="text-[14.5px] text-ink/85 leading-relaxed mt-1">Every frame was intentional. The patient testimonial videos felt real — not rehearsed. Families watching them said it felt like talking to another patient who had been through the same thing.</p>
+        <div class="h-px bg-border my-4"></div>
+        <div class="text-[13px] font-semibold text-ink">Brand Lead</div>
+        <div class="text-[12px] text-ink/60">Women &amp; children's hospital · Chennai</div>
+      </div>
+      <div class="card p-6">
+        <div class="font-serif italic text-rust text-[40px] leading-none">"</div>
+        <p class="text-[14.5px] text-ink/85 leading-relaxed mt-1">We've worked with three video agencies before. The difference was in the brief — they understood the patient mindset before a single camera was switched on. That showed in every cut.</p>
+        <div class="h-px bg-border my-4"></div>
+        <div class="text-[13px] font-semibold text-ink">CMO</div>
+        <div class="text-[12px] text-ink/60">Multi-specialty chain · Hyderabad</div>
+      </div>
+    </div>
+    <div class="mt-10 text-center">
+      <a href="#lead-form-mid" class="btn-primary">Claim the Free Audit of Your YouTube Channel →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MID-PAGE LEAD FORM -->
+<section class="cta-section">
+  <div class="max-w-3xl mx-auto px-6 py-16 relative z-10">
+    <div class="card p-7 md:p-9" id="lead-form-mid">
+      <div class="text-center">
+        <div class="eyebrow text-rust mb-2">Reserve your audit</div>
+        <h2 class="h-serif text-ink text-[28px] md:text-[36px] font-bold leading-tight">Claim the Free Audit of Your YouTube Channel.</h2>
+        <p class="mt-3 text-[14.5px] text-ink/75">Only 5 Slots · Reports within 48 hours · Completely Free</p>
+      </div>
+      <form class="mt-6 grid grid-cols-1 gap-3" name="lead-mid" data-form="mid" onsubmit="return submitLead(event)">
+        <div class="hp-field" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label></div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input required name="name" type="text" placeholder="Your name" class="lead-input" />
+          <input required name="hospital" type="text" placeholder="Hospital name" class="lead-input" />
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input required name="phone" type="tel" placeholder="WhatsApp number" class="lead-input" />
+          <select required name="role" class="lead-input">
+            <option value="">Your role</option>
+            <option>Marketing Head</option>
+            <option>CMO / VP Marketing</option>
+            <option>CEO / COO / CXO</option>
+            <option>Brand / Digital Lead</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <input required name="email" type="email" placeholder="Work email" class="lead-input" />
+        <button type="submit" class="btn-primary justify-center !py-3.5">Claim the Free Audit of Your YouTube Channel →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE WORK -->
+<section id="work" class="sec-white border-y border-border">
+  <div class="max-w-7xl mx-auto px-6 py-14 md:py-16 relative z-10">
+    <div class="max-w-3xl">
+      <div class="eyebrow mb-3">Sample work · Orthopaedics</div>
+      <h2 class="h-serif text-ink text-[30px] md:text-[44px] font-bold">One condition. The full <em>journey</em>.</h2>
+      <p class="mt-4 text-[16px] text-ink/80 leading-relaxed">Four videos on knee replacement — one for each stage of the patient journey. From first symptom to life after surgery. This is what <em class="font-serif text-ink">video as infrastructure</em> looks like in production.</p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- 01 · Awareness -->
+      <div class="vid-card">
+        <div class="vid-shell" data-yt="2RhP2SkSkGw">
+          <div class="poster" style="background-image:url('https://i.ytimg.com/vi/2RhP2SkSkGw/maxresdefault.jpg')"></div>
+          <span class="vid-badge">Symptom Explainer</span>
+          <div class="play"><div class="play-ring"></div></div>
+        </div>
+        <div class="vid-meta">
+          <div class="vid-stage">01 · Educate <span class="stage-label">Awareness</span></div>
+          <h4 class="vid-title">Knee Pain — when is it serious enough to see a doctor?</h4>
+          <div class="vid-source">Manipal Hospitals · Orthopaedics</div>
+        </div>
+      </div>
+
+      <!-- 02 · Trust Building -->
+      <div class="vid-card">
+        <div class="vid-shell" data-yt="TfcOj9KJTH4">
+          <div class="poster" style="background-image:url('https://i.ytimg.com/vi/TfcOj9KJTH4/maxresdefault.jpg')"></div>
+          <span class="vid-badge">Procedure Explainer</span>
+          <div class="play"><div class="play-ring"></div></div>
+        </div>
+        <div class="vid-meta">
+          <div class="vid-stage">02 · Credibilise <span class="stage-label">Trust Building</span></div>
+          <h4 class="vid-title">Knee Replacement Surgery — what actually happens in the OT</h4>
+          <div class="vid-source">Manipal Hospitals · Orthopaedics</div>
+        </div>
+      </div>
+
+      <!-- 03 · Decision -->
+      <div class="vid-card">
+        <div class="vid-shell" data-yt="QsEDTz1qbO4">
+          <div class="poster" style="background-image:url('https://i.ytimg.com/vi/QsEDTz1qbO4/maxresdefault.jpg')"></div>
+          <span class="vid-badge">Patient Testimonial</span>
+          <div class="play"><div class="play-ring"></div></div>
+        </div>
+        <div class="vid-meta">
+          <div class="vid-stage">03 · Reassure <span class="stage-label">Decision</span></div>
+          <h4 class="vid-title">My knee replacement at Manipal — a patient's honest account</h4>
+          <div class="vid-source">Manipal Hospitals · Orthopaedics</div>
+        </div>
+      </div>
+
+      <!-- 04 · Post-Op Care -->
+      <div class="vid-card">
+        <div class="vid-shell" data-yt="Ti7qJqpHtxM">
+          <div class="poster" style="background-image:url('https://i.ytimg.com/vi/Ti7qJqpHtxM/maxresdefault.jpg')"></div>
+          <span class="vid-badge">Recovery Guide</span>
+          <div class="play"><div class="play-ring"></div></div>
+        </div>
+        <div class="vid-meta">
+          <div class="vid-stage">04 · Guide <span class="stage-label">Post-Op Care</span></div>
+          <h4 class="vid-title">Life after knee replacement — what the first 6 weeks look like</h4>
+          <div class="vid-source">Manipal Hospitals · Orthopaedics</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="book" class="cta-section">
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 relative z-10">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="eyebrow text-rust mb-3">Last step</div>
+      <h2 class="h-serif text-ink text-[32px] md:text-[52px] font-bold leading-tight">Stop briefing the next shoot.<br/>Start with the <em>map</em>.</h2>
+      <p class="mt-5 text-[16px] text-ink/80 leading-relaxed">
+        Claim the Free Audit of Your YouTube Channel, and fetch videos from YouTube of Manipal Hospitals related to knee pain.
+      </p>
+      <p class="mt-3 text-[14px] text-rust font-medium">Only 5 Slots · Reports within 48 hours · Completely Free</p>
+    </div>
+    <div class="mt-8 max-w-2xl mx-auto card p-7 md:p-8" id="lead-form-final">
+      <form class="grid grid-cols-1 gap-3" name="lead-final" data-form="final" onsubmit="return submitLead(event)">
+        <div class="hp-field" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label></div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input required name="name" type="text" placeholder="Your name" class="lead-input" />
+          <input required name="hospital" type="text" placeholder="Hospital name" class="lead-input" />
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input required name="phone" type="tel" placeholder="WhatsApp number" class="lead-input" />
+          <select required name="role" class="lead-input">
+            <option value="">Your role</option>
+            <option>Marketing Head</option>
+            <option>CMO / VP Marketing</option>
+            <option>CEO / COO / CXO</option>
+            <option>Brand / Digital Lead</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <input required name="email" type="email" placeholder="Work email" class="lead-input" />
+        <button type="submit" class="btn-primary justify-center !py-3.5 !text-[15px]">Claim the Free Audit of Your YouTube Channel →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-cream border-t border-border">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-3">
+    <a href="https://qlarify.health" class="brand sm" aria-label="Qlarify Health">
+      <svg viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="#163460" fill-rule="evenodd" d="M7,4 H45 A3,3 0 0 1 48,7 V45 A3,3 0 0 1 45,48 H7 A3,3 0 0 1 4,45 V7 A3,3 0 0 1 7,4 Z M16,12 H36 A3,3 0 0 1 39,15 V36 A3,3 0 0 1 36,39 H16 A3,3 0 0 1 13,36 V15 A3,3 0 0 1 16,12 Z"/>
+        <line x1="44" y1="46" x2="57" y2="61" stroke="#163460" stroke-width="7" stroke-linecap="round"/>
+        <text x="62" y="38" font-family="'DM Sans', Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="1" fill="#163460">LARIFY</text>
+        <text x="66" y="62" font-family="'DM Sans', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="6" fill="#E8835F">HEALTH</text>
+      </svg>
+    </a>
+    <div class="micro">© 2026 Qlarify Health</div>
+  </div>
+</footer>
+
+<!-- Floating sticky CTA -->
+<a href="#lead-form-mid" id="sticky-cta" class="sticky-cta" aria-label="Get my free audit">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"></rect><path d="M8 2v4M16 2v4M3 10h18"></path></svg>
+  Claim the Free Audit of Your YouTube Channel
+</a>
+
+<script>
+  /* ─────────────────────────────────────────────────────────────
+     HUBSPOT CRM INTEGRATION
+     ─────────────────────────────────────────────────────────────
+     1. Log into HubSpot. Copy the number after /contacts/ in the URL → that's your Portal ID.
+     2. Marketing → Forms → Create form → Embedded form. Add fields:
+          email, firstname, lastname, phone, company, jobtitle
+        Optionally add custom contact properties:
+          lead_source, audit_form_source,
+          utm_source, utm_medium, utm_campaign, utm_term, utm_content,
+          gclid, fbclid, referrer
+     3. After saving the form, click "Embed" → copy the long UUID after /submit/ → that's your Form GUID.
+     4. Paste both below. The HubSpot tracking script auto-loads when Portal ID is set,
+        so the hubspotutk cookie ties form submissions back to the visitor session.
+     ───────────────────────────────────────────────────────────── */
+  const HUBSPOT_PORTAL_ID = ""; // e.g. "12345678"
+  const HUBSPOT_FORM_ID   = ""; // e.g. "abcd1234-ef56-7890-ab12-cd34ef567890"
+  const HUBSPOT_REGION    = "na1"; // "na1" (US, default) or "eu1" (EU)
+
+  /* ─────────────────────────────────────────────────────────────
+     ANALYTICS & AD TRACKING
+     ─────────────────────────────────────────────────────────────
+     Each tag is optional and loads only when its ID is set.
+     • GA4 → Google Analytics → Admin → Data Streams → copy "Measurement ID" (G-XXXXXXXXXX)
+     • Meta Pixel → Events Manager → Data Sources → your pixel → copy "Pixel ID" (15-16 digit number)
+     • GTM → Tag Manager → workspace → container ID (GTM-XXXXXXX) — use this if you want to manage all
+       tags through GTM instead of hard-coding GA4 + Pixel here. If GTM is set, you can leave the
+       GA4_MEASUREMENT_ID + META_PIXEL_ID empty and configure them inside GTM.
+     ───────────────────────────────────────────────────────────── */
+  const GA4_MEASUREMENT_ID = ""; // e.g. "G-XXXXXXXXXX"
+  const META_PIXEL_ID      = ""; // e.g. "123456789012345"
+  const GTM_CONTAINER_ID   = ""; // e.g. "GTM-XXXXXXX"
+
+  // Load GA4
+  if (GA4_MEASUREMENT_ID) {
+    const ga = document.createElement('script');
+    ga.async = true;
+    ga.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA4_MEASUREMENT_ID, { send_page_view: true });
+  }
+
+  // Load Meta Pixel
+  if (META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+
+  // Load Google Tag Manager
+  if (GTM_CONTAINER_ID) {
+    window.dataLayer = window.dataLayer || [];
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM_CONTAINER_ID);
+  }
+
+  const CALENDLY_URL = "https://calendly.com/qlarify-marketing/30min";
+  document.querySelectorAll('a[href="#calendly-fallback"]').forEach(a => a.setAttribute('href', CALENDLY_URL));
+
+  // Auto-load HubSpot tracking if Portal ID is configured
+  if (HUBSPOT_PORTAL_ID && !document.getElementById('hs-script-loader')) {
+    const s = document.createElement('script');
+    s.type = 'text/javascript'; s.id = 'hs-script-loader';
+    s.async = true; s.defer = true;
+    s.src = `//js.hs-scripts.com/${HUBSPOT_PORTAL_ID}.js`;
+    document.head.appendChild(s);
+  }
+
+  // Capture UTM / click-id / referrer once per session for attribution
+  (function captureAttribution(){
+    try {
+      const params = new URLSearchParams(location.search);
+      const stored = JSON.parse(sessionStorage.getItem('attribution') || '{}');
+      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid','msclkid'].forEach(k => {
+        const v = params.get(k);
+        if (v && !stored[k]) stored[k] = v;
+      });
+      if (!stored.referrer && document.referrer && !document.referrer.includes(location.host)) {
+        stored.referrer = document.referrer;
+      }
+      if (!stored.first_touch_at) stored.first_touch_at = new Date().toISOString();
+      sessionStorage.setItem('attribution', JSON.stringify(stored));
+    } catch(e) {}
+  })();
+
+  function getAttribution(){
+    try { return JSON.parse(sessionStorage.getItem('attribution') || '{}'); }
+    catch(e){ return {}; }
+  }
+  function getHubspotUtk(){
+    const m = document.cookie.match(/hubspotutk=([^;]+)/);
+    return m ? m[1] : null;
+  }
+  function splitName(full){
+    const parts = (full || '').trim().split(/\s+/);
+    return { first: parts.shift() || '', last: parts.join(' ') };
+  }
+
+  async function submitLead(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type=submit]');
+    const original = btn.innerHTML;
+    btn.innerHTML = "Sending…";
+    btn.disabled = true;
+
+    // Honeypot — silently drop bot submissions
+    const hp = form.querySelector('[name="website"]');
+    if (hp && hp.value) { return false; }
+
+    const data = Object.fromEntries(new FormData(form));
+    const attribution = getAttribution();
+    const { first, last } = splitName(data.name);
+
+    try {
+      if (HUBSPOT_PORTAL_ID && HUBSPOT_FORM_ID) {
+        const fields = [
+          { name: 'email',     value: data.email    || '' },
+          { name: 'firstname', value: first },
+          { name: 'lastname',  value: last },
+          { name: 'phone',     value: data.phone    || '' },
+          { name: 'company',   value: data.hospital || '' },
+          { name: 'jobtitle',  value: data.role     || '' },
+          { name: 'lead_source',       value: 'Video Audit Landing Page' },
+          { name: 'audit_form_source', value: form.dataset.form || '' }
+        ];
+        // Pass UTM/attribution if you've added matching custom contact properties in HubSpot
+        Object.entries(attribution).forEach(([k,v]) => {
+          if (v) fields.push({ name: k, value: String(v) });
+        });
+
+        const payload = {
+          submittedAt: Date.now(),
+          fields,
+          context: {
+            hutk: getHubspotUtk() || undefined,
+            pageUri: location.href,
+            pageName: document.title
+          }
+        };
+
+        const apiBase = HUBSPOT_REGION === 'eu1' ? 'https://api-eu1.hsforms.com' : 'https://api.hsforms.com';
+        const url = `${apiBase}/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) {
+          const errBody = await res.text();
+          console.error('HubSpot submission failed', res.status, errBody);
+          throw new Error('HubSpot ' + res.status);
+        }
+      } else {
+        console.warn('HubSpot not configured. Set HUBSPOT_PORTAL_ID + HUBSPOT_FORM_ID. Payload:', { ...data, ...attribution });
+      }
+
+      // Fire conversion pixels (no-ops until GA4 / Meta Pixel are loaded)
+      if (window.gtag) gtag('event','generate_lead', { form: form.dataset.form });
+      if (window.fbq)  fbq('track','Lead', { source: form.dataset.form });
+      if (window.dataLayer) window.dataLayer.push({ event: 'lead_submit', form: form.dataset.form });
+
+      form.innerHTML = `
+        <div class="text-center py-6">
+          <div class="font-serif text-[28px] text-ink font-bold">Got it.</div>
+          <p class="mt-2 text-[14.5px] text-ink/75">We'll review your hospital and reply within 24 hours. If we're a fit, you'll have your audit in 7 days.</p>
+        </div>`;
+    } catch(err) {
+      console.error(err);
+      btn.innerHTML = original;
+      btn.disabled = false;
+      alert("Something went wrong. Please email info@qlarify.health or WhatsApp +91 81474 10751.");
+    }
+    return false;
+  }
+
+  // Sticky header backdrop + reveal sticky CTA after hero
+  const sticky = document.getElementById('sticky-cta');
+  const hero = document.querySelector('.hero');
+  const header = document.getElementById('site-header');
+  function onScroll(){
+    if (header) {
+      if (window.scrollY > 8) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }
+    if (!hero || !sticky) return;
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 80) sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Click-to-play videos
+  document.querySelectorAll('.vid-shell').forEach(shell => {
+    shell.addEventListener('click', () => {
+      if (shell.classList.contains('playing')) return;
+      const ytId = shell.getAttribute('data-yt');
+      const src  = shell.getAttribute('data-src');
+      if (ytId) {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+        iframe.title = 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.style.cssText = 'width:100%;height:100%;border:0;display:block';
+        shell.appendChild(iframe);
+        shell.classList.add('playing');
+        return;
+      }
+      if (src) {
+        const v = document.createElement('video');
+        v.src = src; v.controls = true; v.autoplay = true; v.playsInline = true;
+        shell.appendChild(v);
+        shell.classList.add('playing');
+      }
+    });
+  });
+
+  // Carousel
+  document.querySelectorAll('.carousel-wrap').forEach(wrap => {
+    const track = wrap.querySelector('.carousel-track');
+    const prev = wrap.querySelector('.carousel-prev');
+    const next = wrap.querySelector('.carousel-next');
+    const dots = Array.from(wrap.querySelectorAll('.carousel-dot'));
+    if (!track) return;
+
+    const cardStep = () => {
+      const first = track.querySelector('.carousel-card');
+      if (!first) return 300;
+      const style = getComputedStyle(track);
+      const gap = parseFloat(style.columnGap || style.gap || '18') || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+
+    const updateState = () => {
+      const step = cardStep();
+      if (!step) return;
+      const idx = Math.round(track.scrollLeft / step);
+      dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    };
+
+    if (prev) prev.addEventListener('click', () => track.scrollBy({left:-cardStep(), behavior:'smooth'}));
+    if (next) next.addEventListener('click', () => track.scrollBy({left: cardStep(), behavior:'smooth'}));
+    dots.forEach((d,i) => d.addEventListener('click', () => track.scrollTo({left: i * cardStep(), behavior:'smooth'})));
+
+    let scrollRaf;
+    track.addEventListener('scroll', () => {
+      cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(updateState);
+    }, {passive:true});
+    window.addEventListener('resize', updateState);
+    updateState();
+  });
+</script>
+</body>
+</html>
