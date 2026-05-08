@@ -488,22 +488,24 @@
 
 <script>
   /* ─────────────────────────────────────────────────────────────
-     HUBSPOT CRM INTEGRATION
+     LEAD SUBMISSION
      ─────────────────────────────────────────────────────────────
-     1. Log into HubSpot. Copy the number after /contacts/ in the URL → that's your Portal ID.
-     2. Marketing → Forms → Create form → Embedded form. Add fields:
-          email, firstname, lastname, phone, company, jobtitle
-        Optionally add custom contact properties:
-          lead_source, audit_form_source,
-          utm_source, utm_medium, utm_campaign, utm_term, utm_content,
-          gclid, fbclid, referrer
-     3. After saving the form, click "Embed" → copy the long UUID after /submit/ → that's your Form GUID.
-     4. Paste both below. The HubSpot tracking script auto-loads when Portal ID is set,
-        so the hubspotutk cookie ties form submissions back to the visitor session.
+     Form posts to /api/lead — a Vercel serverless function (api/lead.js)
+     that emails info@qlarify.health via Resend. The function reads
+     RESEND_API_KEY from Vercel project env vars.
      ───────────────────────────────────────────────────────────── */
-  const HUBSPOT_PORTAL_ID = ""; // e.g. "12345678"
-  const HUBSPOT_FORM_ID   = ""; // e.g. "abcd1234-ef56-7890-ab12-cd34ef567890"
-  const HUBSPOT_REGION    = "na1"; // "na1" (US, default) or "eu1" (EU)
+  const LEAD_ENDPOINT = "https://formsubmit.co/ajax/info@qlarify.health";
+
+  /* ─────────────────────────────────────────────────────────────
+     GOOGLE ADS CONVERSION
+     ─────────────────────────────────────────────────────────────
+     The Google Ads tag (AW-18086875510) is loaded in <head>. To count
+     form submits as conversions, create a "Submit lead form" conversion
+     action in Google Ads, copy the Conversion Label, and paste below.
+     Format looks like "abcDEF123_xYZ". Until set, conversions won't fire.
+     ───────────────────────────────────────────────────────────── */
+  const GOOGLE_ADS_CONVERSION_ID = "AW-18086875510";
+  const GOOGLE_ADS_CONVERSION_LABEL = ""; // TODO: paste from Google Ads → Goals → Conversions
 
   /* ─────────────────────────────────────────────────────────────
      ANALYTICS & AD TRACKING
@@ -554,15 +556,6 @@
   const CALENDLY_URL = "https://calendly.com/qlarify-marketing/30min";
   document.querySelectorAll('a[href="#calendly-fallback"]').forEach(a => a.setAttribute('href', CALENDLY_URL));
 
-  // Auto-load HubSpot tracking if Portal ID is configured
-  if (HUBSPOT_PORTAL_ID && !document.getElementById('hs-script-loader')) {
-    const s = document.createElement('script');
-    s.type = 'text/javascript'; s.id = 'hs-script-loader';
-    s.async = true; s.defer = true;
-    s.src = `//js.hs-scripts.com/${HUBSPOT_PORTAL_ID}.js`;
-    document.head.appendChild(s);
-  }
-
   // Capture UTM / click-id / referrer once per session for attribution
   (function captureAttribution(){
     try {
@@ -584,14 +577,6 @@
     try { return JSON.parse(sessionStorage.getItem('attribution') || '{}'); }
     catch(e){ return {}; }
   }
-  function getHubspotUtk(){
-    const m = document.cookie.match(/hubspotutk=([^;]+)/);
-    return m ? m[1] : null;
-  }
-  function splitName(full){
-    const parts = (full || '').trim().split(/\s+/);
-    return { first: parts.shift() || '', last: parts.join(' ') };
-  }
 
   async function submitLead(e) {
     e.preventDefault();
@@ -607,53 +592,37 @@
 
     const data = Object.fromEntries(new FormData(form));
     const attribution = getAttribution();
-    const { first, last } = splitName(data.name);
 
     try {
-      if (HUBSPOT_PORTAL_ID && HUBSPOT_FORM_ID) {
-        const fields = [
-          { name: 'email',     value: data.email    || '' },
-          { name: 'firstname', value: first },
-          { name: 'lastname',  value: last },
-          { name: 'phone',     value: data.phone    || '' },
-          { name: 'company',   value: data.hospital || '' },
-          { name: 'jobtitle',  value: data.role     || '' },
-          { name: 'lead_source',       value: 'Video Audit Landing Page' },
-          { name: 'audit_form_source', value: form.dataset.form || '' }
-        ];
-        // Pass UTM/attribution if you've added matching custom contact properties in HubSpot
-        Object.entries(attribution).forEach(([k,v]) => {
-          if (v) fields.push({ name: k, value: String(v) });
-        });
+      const payload = {
+        name:        data.name     || '',
+        email:       data.email    || '',
+        hospital:    data.hospital || '',
+        phone:       data.phone    || '',
+        role:        data.role     || '',
+        form_source: form.dataset.form || '',
+        _subject:    `New audit request — ${data.hospital || ''} (${data.role || ''})`,
+        _template:   'table',
+        _captcha:    'false'
+      };
+      Object.entries(attribution).forEach(([k, v]) => { if (v) payload[k] = String(v); });
 
-        const payload = {
-          submittedAt: Date.now(),
-          fields,
-          context: {
-            hutk: getHubspotUtk() || undefined,
-            pageUri: location.href,
-            pageName: document.title
-          }
-        };
+      const res = await fetch(LEAD_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Lead ' + res.status);
+      const result = await res.json();
+      console.log('Formsubmit response:', result);
 
-        const apiBase = HUBSPOT_REGION === 'eu1' ? 'https://api-eu1.hsforms.com' : 'https://api.hsforms.com';
-        const url = `${apiBase}/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
-        const res = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+      // Fire conversion pixels (Google Ads conversion fires only when label is set)
+      if (window.gtag && GOOGLE_ADS_CONVERSION_LABEL) {
+        gtag('event', 'conversion', {
+          send_to: `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`,
+          form: form.dataset.form
         });
-        if (!res.ok) {
-          const errBody = await res.text();
-          console.error('HubSpot submission failed', res.status, errBody);
-          throw new Error('HubSpot ' + res.status);
-        }
-      } else {
-        console.warn('HubSpot not configured. Set HUBSPOT_PORTAL_ID + HUBSPOT_FORM_ID. Payload:', { ...data, ...attribution });
       }
-
-      // Fire conversion pixels (no-ops until GA4 / Meta Pixel are loaded)
-      if (window.gtag) gtag('event','generate_lead', { form: form.dataset.form });
       if (window.fbq)  fbq('track','Lead', { source: form.dataset.form });
       if (window.dataLayer) window.dataLayer.push({ event: 'lead_submit', form: form.dataset.form });
 
