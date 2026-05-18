@@ -494,7 +494,7 @@
      that emails info@qlarify.health via Resend. The function reads
      RESEND_API_KEY from Vercel project env vars.
      ───────────────────────────────────────────────────────────── */
-  const LEAD_ENDPOINT = "https://formsubmit.co/ajax/info@qlarify.health";
+  const LEAD_ENDPOINT = "/api/lead";
 
   /* ─────────────────────────────────────────────────────────────
      GOOGLE ADS CONVERSION
@@ -600,10 +600,7 @@
         hospital:    data.hospital || '',
         phone:       data.phone    || '',
         role:        data.role     || '',
-        form_source: form.dataset.form || '',
-        _subject:    `New audit request — ${data.hospital || ''} (${data.role || ''})`,
-        _template:   'table',
-        _captcha:    'false'
+        form_source: form.dataset.form || ''
       };
       Object.entries(attribution).forEach(([k, v]) => { if (v) payload[k] = String(v); });
 
@@ -614,7 +611,7 @@
       });
       if (!res.ok) throw new Error('Lead ' + res.status);
       const result = await res.json();
-      console.log('Formsubmit response:', result);
+      console.log('Lead API response:', result);
 
       // Fire conversion pixels (Google Ads conversion fires only when label is set)
       if (window.gtag && GOOGLE_ADS_CONVERSION_LABEL) {
