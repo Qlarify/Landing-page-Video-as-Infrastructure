@@ -32,7 +32,7 @@ module.exports = async function handler(req, res) {
   // Honeypot — bots fill hidden fields; humans don't
   if (data.website) return res.status(200).json({ ok: true });
 
-  const required = ['name', 'email', 'hospital', 'phone', 'role'];
+  const required = ['name', 'email', 'hospital', 'phone', 'role', 'youtube_url'];
   const missing = required.filter(k => !data[k] || !String(data[k]).trim());
   if (missing.length) {
     return res.status(400).json({ error: `Missing required fields: ${missing.join(', ')}` });
@@ -40,6 +40,10 @@ module.exports = async function handler(req, res) {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email))) {
     return res.status(400).json({ error: 'Invalid email address' });
+  }
+
+  if (!/youtube\.com|youtu\.be/i.test(String(data.youtube_url))) {
+    return res.status(400).json({ error: 'Please provide a valid YouTube URL' });
   }
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -70,6 +74,7 @@ module.exports = async function handler(req, res) {
         <tr><td style="padding:6px 12px;background:#f9fafb"><b>Email</b></td><td style="padding:6px 12px"><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></td></tr>
         <tr><td style="padding:6px 12px;background:#f9fafb"><b>Phone</b></td><td style="padding:6px 12px"><a href="tel:${escapeHtml(data.phone)}">${escapeHtml(data.phone)}</a></td></tr>
         <tr><td style="padding:6px 12px;background:#f9fafb"><b>Role</b></td><td style="padding:6px 12px">${escapeHtml(data.role)}</td></tr>
+        <tr><td style="padding:6px 12px;background:#f9fafb"><b>YouTube</b></td><td style="padding:6px 12px"><a href="${escapeHtml(data.youtube_url)}" target="_blank" rel="noopener">${escapeHtml(data.youtube_url)}</a></td></tr>
         ${attributionRows ? `<tr><td colspan="2" style="padding:12px;background:#f9fafb"><b>Attribution</b></td></tr>${attributionRows}` : ''}
       </table>
     </div>
