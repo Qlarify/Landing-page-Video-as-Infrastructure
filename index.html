@@ -598,12 +598,14 @@
 
     try {
       const payload = {
-        name:        data.name     || '',
-        email:       data.email    || '',
-        hospital:    data.hospital || '',
-        phone:       data.phone    || '',
-        role:        data.role     || '',
-        form_source: form.dataset.form || ''
+        name:         data.name        || '',
+        email:        data.email       || '',
+        hospital:     data.hospital    || '',
+        phone:        data.phone       || '',
+        role:         data.role        || '',
+        youtube_url:  data.youtube_url || '',
+        website:      data.website     || '',
+        form_source:  form.dataset.form || ''
       };
       Object.entries(attribution).forEach(([k, v]) => { if (v) payload[k] = String(v); });
 
